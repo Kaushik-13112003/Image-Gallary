@@ -1,0 +1,144 @@
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
+
+body::-webkit-scrollbar {
+  display: none;
+}
+
+/* style for logo & filter buttons  */
+header {
+  display: flex;
+  justify-content: center;
+  padding: 20px;
+  background-color: black;
+}
+.centerClass {
+  display: flex;
+  justify-content: space-evenly;
+  flex-direction: row;
+  gap: 20px;
+  align-items: center;
+  width: 500px;
+}
+
+/* logo */
+.centerClass #logo {
+  width: 80px;
+}
+
+/* filterBtns */
+.centerClass .filterBtns,
+#loadMore {
+  margin: 10px;
+  width: 100px;
+  box-shadow: 1px 1px 1px white;
+  border-radius: 10px;
+  padding: 10px;
+  font-size: 16px;
+  transition: all 0.6s ease-in-out;
+}
+
+.filterBtns:hover,
+#loadMore:hover {
+  cursor: pointer;
+  background-color: rgb(239, 179, 69);
+}
+
+.active {
+  background: orange;
+  color: black;
+}
+
+/* gallery */
+.gallery {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+  grid-auto-rows: 300px;
+  grid-auto-flow: dense;
+  grid-gap: 10px;
+  padding: 10px;
+}
+
+.gallery .v-strech {
+  grid-row: span 2;
+}
+
+.gallery .h-strech {
+  grid-column: span 2;
+}
+
+.gallery .big-strech {
+  grid-row: span 2;
+  grid-column: span 2;
+}
+
+.gallery img {
+  width: 100%;
+  height: 100%;
+  filter: grayscale(70%);
+  object-fit: cover;
+  transition: all 0.6s ease-in-out;
+}
+
+.gallery img:hover {
+  filter: grayscale(0%);
+}
+
+.load-more-btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  background-color: #4caf50;
+  color: white;
+  text-align: center;
+  text-decoration: none;
+  font-size: 16px;
+  margin-top: 20px;
+  cursor: pointer;
+}
+
+/* media queries */
+@media screen and (max-width: 768px) {
+  .centerClass {
+    flex-direction: column;
+  }
+
+  .centerClass .filterBtns {
+    width: 80px;
+  }
+}
+
+@media screen and (max-width: 900px) {
+  .gallery .v-strech {
+    grid-row: span 1;
+  }
+
+  .gallery .h-strech {
+    grid-column: span 1;
+  }
+
+  .gallery .big-strech {
+    grid-row: span 1;
+    grid-column: span 1;
+  }
+}
+
+.btnCenter {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+#loadMore {
+  width: 140px;
+  display: block;
+  margin-bottom: 30px;
+}
+
+.btnCenter p {
+  font-size: 40px;
+  margin-bottom: 30px;
+}
